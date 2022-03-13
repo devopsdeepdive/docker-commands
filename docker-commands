@@ -1,0 +1,25 @@
+/var/lib/docker
+  version     Show the Docker version information
+  info        Display system-wide information
+Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  search      Search the Docker Hub for images
+  pull        Pull an image or a repository from a registry
+  images      List images
+docker images –a    Show all images (default hides intermediate images)
+docker images –q 	Only show image IDs
+  rmi         Remove one or more images
+docker rmi 5d0da3dc9764
+  run         Run a command in a new container
+docker run -it eeb6ee3f44bd
+  ps          List containers
+docker ps -a
+docker run -itd --name jenkins -p 8081:8080 8dc286d9eb13
+docker exec -it 52449d92f491 sh
+
