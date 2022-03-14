@@ -22,4 +22,22 @@ docker run -it eeb6ee3f44bd
 docker ps -a
 docker run -itd --name jenkins -p 8081:8080 8dc286d9eb13
 docker exec -it 52449d92f491 sh
+docker run -itd --rm --name centos eeb6ee3f44bd
+memory
+1. hard limit : 
+docker run -d -p 8082:80 --memory="06m" httpd
+2. soft limit
+docker run -d -p 8082:80 --memory="07m" --memory-reservation="06m"  httpd
+docker update --memory="500m" cbeae0fd039b: to running container
+docker rmi $(docker images -a -q) all the images
+docker rmi -f $(docker images -a -q)
+
+docker rename  4c30cc98220a mysql-new: rename the container
+docker diff 4c30cc98220a
+docker events --since '2022-02-05’
+docker events --since '2022-03-14' | grep 4c30cc98220a
+docker commit <<container ID>>
+docker tag <<old image ID>>  devopsdeepdive/Jenkins 
+docker tag e24e3a4d6166 devopsdeepdive/jenkins_new
+docker push devopsdeepdive/jenkins_new
 
