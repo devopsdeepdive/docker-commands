@@ -33,6 +33,28 @@ docker rmi $(docker images -a -q) all the images
 docker rmi -f $(docker images -a -q)
 
 docker rename  4c30cc98220a mysql-new: rename the container
+
+15th march
+docker cp sample.txt 52449d92f491:/home : local to docker container
+docker cp 52449d92f491:/home/sample.txt .  : docker container to local
+Volume 
+docker run -itd -v data:/home/centos 5d0da3dc9764
+Bind mount
+docker run -itd -v data:/home/centos 5d0da3dc9764
+persistent
+docker run -itd --name centos_2 -v centos:/home 5d0da3dc9764
+docker run -d \
+  --name devtest \
+  --mount source=nginx,target=/app \
+  nginx:latest
+
+backend jio : jio to jio database
+jio airtel :  database
+
+create networks:
+
+docker run -itd --network=mynet busybox
+
 docker diff 4c30cc98220a
 docker events --since '2022-02-05’
 docker events --since '2022-03-14' | grep 4c30cc98220a
